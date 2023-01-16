@@ -1,3 +1,3 @@
 require 'setupPlugins'
-require 'core.keymaps'
-require 'core.options'
+require 'core'
+require 'plugins'

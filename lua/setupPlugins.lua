@@ -46,7 +46,13 @@ return packer.startup(function(use)
   -- Simple plugins can be specified as strings
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
-
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
 
   -- Automatically set up your configuration after cloning packer.nvim
