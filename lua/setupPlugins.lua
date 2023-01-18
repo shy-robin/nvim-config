@@ -71,6 +71,10 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  use 'windwp/nvim-ts-autotag'
+
+  use 'p00f/nvim-ts-rainbow'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
