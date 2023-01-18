@@ -4,4 +4,5 @@ require 'plugins.bufferline'
 require 'plugins.nvim-tree'
 require 'plugins.autopairs'
 require 'plugins.which-key'
+require 'plugins.telescope'
 

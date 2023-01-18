@@ -9,7 +9,7 @@ wk.register(
     H = { ':bprevious<CR>', 'Previous Buffer' },
     L = { ':bnext<CR>', 'Next Buffer'},
     tt = { ':enew<CR>', 'New Buffer'},
-    tw = { ':Bdelete this<CR>', 'Delete Buffer'},
+    tw = { ':Bdelete this<CR>:bprevious<CR>', 'Delete Buffer'},
     to = { ':Bdelete other<CR>', 'Delete All Buffers Except Current'},
   },
   {
@@ -20,6 +20,7 @@ wk.register(
 wk.register(
   {
     q = { ':q<CR>', 'Quit' },
+    Q = { ':q!<CR>', 'Quit Force' },
     w = { ':w<CR>', 'Save' },
   },
   {
