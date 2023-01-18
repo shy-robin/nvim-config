@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true } -- silent means the command in terminal will not display
 
 local term_opts = { silent = true }
 
@@ -24,6 +24,10 @@ vim.g.maplocalleader = " "
 -------------------------
 
 ---------- Normal ----------
+
+-- fast moving
+keymap('n', '<S-j>', '5j', opts)
+keymap('n', '<S-k>', '5k', opts)
 
 -- no highlight  <CR> means Carriage Return
 keymap("n", "<leader>nh", ":nohl<CR>", opts)
@@ -53,21 +57,11 @@ keymap("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
 keymap("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width
 keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split window 
 
--- tab
-keymap("n", "tt", ":tabnew<CR>", opts) -- open new tab
-keymap("n", "tw", ":tabclose<CR>", opts) -- close current tab
-keymap("n", "tl", ":tabn<CR>", opts) -- go to the next tab
-keymap("n", "th", ":tabp<CR>", opts) -- go to the previous tab
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 ---------- Insert ----------
 
@@ -98,8 +92,6 @@ keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation

@@ -77,6 +77,10 @@ return packer.startup(function(use)
 
   use 'windwp/nvim-autopairs'
 
+  use 'folke/which-key.nvim' 
+
+  use 'Asheq/close-buffers.vim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
