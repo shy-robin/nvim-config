@@ -9,4 +9,5 @@ require 'plugins.lsp'
 require 'plugins.colorizer'
 require 'plugins.gitsigns'
 require 'plugins.dashboard'
+require 'plugins.indent-blankline'
 
