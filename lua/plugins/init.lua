@@ -6,4 +6,5 @@ require 'plugins.autopairs'
 require 'plugins.which-key'
 require 'plugins.telescope'
 require 'plugins.lsp'
+require 'plugins.colorizer'
 
