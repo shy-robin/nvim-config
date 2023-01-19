@@ -62,8 +62,8 @@ cmp.setup {
     end, { "i", "s" }),
   },
   sources = {
-    {name = 'nvim_lsp'}, -- For vsnip user.
     {name = 'vsnip'}, -- For luasnip user.
+    {name = 'nvim_lsp'}, -- For vsnip user.
     -- { name = 'luasnip' },
     -- For ultisnips user.
     -- { name = 'ultisnips' },
