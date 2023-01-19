@@ -10,4 +10,5 @@ require 'plugins.colorizer'
 require 'plugins.gitsigns'
 require 'plugins.dashboard'
 require 'plugins.indent-blankline'
+require 'plugins.formatter'
 
