@@ -8,4 +8,5 @@ require 'plugins.telescope'
 require 'plugins.lsp'
 require 'plugins.colorizer'
 require 'plugins.gitsigns'
+require 'plugins.dashboard'
 

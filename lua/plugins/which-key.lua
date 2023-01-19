@@ -43,6 +43,14 @@ wk.register(
       n = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic" },
       N = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic" }
     },
+    f = {
+      f = { ':Telescope find_files<cr>', 'Find files'},
+      s = { ':Telescope live_grep<cr>', 'Search text'},
+      b = { ':Telescope buffers<cr>', 'Search buffers'},
+      o = { ':Telescope oldfiles<cr>', 'Old files'},
+      h = { ':Telescope help_tags<cr>', 'Help tags'},
+      c = { ':e ~/.config/nvim/init.lua<cr>', 'Open nvim config'},
+    }
   },
   {
     prefix = '<leader>',
