@@ -109,8 +109,6 @@ return packer.startup(function(use)
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use 'mhartington/formatter.nvim'
-
   use 'numToStr/Comment.nvim'
 
   use 'akinsho/toggleterm.nvim'
@@ -122,6 +120,10 @@ return packer.startup(function(use)
   use 'folke/zen-mode.nvim'
 
   use 'folke/twilight.nvim'
+
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  use "nvim-lua/plenary.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
