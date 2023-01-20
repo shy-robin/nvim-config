@@ -7,13 +7,23 @@ end
 wk.register(
   {
     H = { ':bprevious<CR>', 'Previous Buffer' },
-    L = { ':bnext<CR>', 'Next Buffer'},
-    tt = { ':enew<CR>', 'New Buffer'},
-    tw = { ':Bdelete this<CR>:bprevious<CR>', 'Delete Buffer'},
-    to = { ':Bdelete other<CR>', 'Delete All Buffers Except Current'},
+    L = { ':bnext<CR>', 'Next Buffer' },
+    tt = { ':enew<CR>', 'New Buffer' },
+    tw = { ':Bdelete this<CR>:bprevious<CR>', 'Delete Buffer' },
+    to = { ':Bdelete other<CR>', 'Delete All Buffers Except Current' },
+    f = { ':HopChar1<CR>', 'Hop Char1' },
+    F = { ':HopChar1CurrentLine<CR>', 'Hop Char1 in current line' },
+  }
+)
+
+wk.register(
+  {
+    -- use y/c/d operators in Hop
+    f = { ':HopChar1<CR>', 'Hop Char1' },
+    F = { ':HopChar1CurrentLine<CR>', 'Hop Char1 in current line' },
   },
   {
-    prefix = ''
+    mode = 'o' -- means Operator Pending Mode
   }
 )
 
@@ -45,21 +55,20 @@ wk.register(
     },
     f = {
       name = "Telescope",
-      f = { ':Telescope find_files<cr>', 'Find files'},
-      s = { ':Telescope live_grep<cr>', 'Search text'},
-      b = { ':Telescope buffers<cr>', 'Search buffers'},
-      o = { ':Telescope oldfiles<cr>', 'Old files'},
-      h = { ':Telescope help_tags<cr>', 'Help tags'},
-      c = { ':e ~/.config/nvim/init.lua<cr>', 'Open nvim config'},
+      f = { ':Telescope find_files<cr>', 'Find files' },
+      s = { ':Telescope live_grep<cr>', 'Search text' },
+      b = { ':Telescope buffers<cr>', 'Search buffers' },
+      o = { ':Telescope oldfiles<cr>', 'Old files' },
+      h = { ':Telescope help_tags<cr>', 'Help tags' },
+      c = { ':e ~/.config/nvim/init.lua<cr>', 'Open nvim config' },
     },
     z = {
       name = 'Focus mode',
       z = { ':ZenMode<cr>', 'Zen mode' },
-      t = { ':Twilight<cr>', 'Twilight'}
+      t = { ':Twilight<cr>', 'Twilight' }
     }
   },
   {
     prefix = '<leader>',
   }
 )
-

@@ -3,7 +3,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
-local configs = require'lspconfig.configs'
+local configs = require 'lspconfig.configs'
 
 if not configs.ls_emmet then
   configs.ls_emmet = {
@@ -50,4 +50,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
