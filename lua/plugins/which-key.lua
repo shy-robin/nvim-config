@@ -44,12 +44,18 @@ wk.register(
       N = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic" }
     },
     f = {
+      name = "Telescope",
       f = { ':Telescope find_files<cr>', 'Find files'},
       s = { ':Telescope live_grep<cr>', 'Search text'},
       b = { ':Telescope buffers<cr>', 'Search buffers'},
       o = { ':Telescope oldfiles<cr>', 'Old files'},
       h = { ':Telescope help_tags<cr>', 'Help tags'},
       c = { ':e ~/.config/nvim/init.lua<cr>', 'Open nvim config'},
+    },
+    z = {
+      name = 'Focus mode',
+      z = { ':ZenMode<cr>', 'Zen mode' },
+      t = { ':Twilight<cr>', 'Twilight'}
     }
   },
   {

@@ -15,4 +15,6 @@ require 'plugins.comment'
 require 'plugins.toggleterm'
 require 'plugins.lspsaga'
 require 'plugins.mason'
+require 'plugins.zen-mode'
+require 'plugins.twilight'
 
