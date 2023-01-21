@@ -1,8 +1,23 @@
-local status_ok, nvimTree = pcall(require, 'nvim-tree')
-
-if not status_ok then
-  return
-end
-
-nvimTree.setup()
-
+require('nvim-tree').setup {
+  view = {
+    adaptive_size = true,
+    signcolumn = 'yes'
+  },
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true,
+  },
+  git = {
+    ignore = false,
+  },
+  modified = {
+    enanble = true
+  },
+  log = {
+    enable = true,
+    truncate = true,
+    types = {
+      diagnostics = true,
+    }
+  }
+}
