@@ -20,4 +20,4 @@ require 'plugins.twilight'
 require 'plugins.null-ls'
 require 'plugins.hop'
 require 'plugins.noice'
-
+require 'plugins.barbecue'
