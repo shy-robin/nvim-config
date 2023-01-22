@@ -72,7 +72,8 @@ wk.register(
       b = { ':BufferLinePick<cr>', 'Go to buffer' },
       w = { ':BufferLinePickClose<cr>', 'Close buffer' },
       p = { ':BufferLineTogglePin<cr>', 'Toggle buffer pin' },
-    }
+    },
+    m = { "'", 'Move to mark' }
   },
   {
     prefix = '<leader>',

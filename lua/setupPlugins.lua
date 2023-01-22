@@ -153,6 +153,8 @@ return packer.startup(function(use)
 
   use 'karb94/neoscroll.nvim'
 
+  use 'chentoast/marks.nvim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end a all plugins
   if PACKER_BOOTSTRAP then
