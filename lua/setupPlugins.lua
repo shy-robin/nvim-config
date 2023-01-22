@@ -155,6 +155,8 @@ return packer.startup(function(use)
 
   use 'chentoast/marks.nvim'
 
+  use 'christoomey/vim-tmux-navigator'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end a all plugins
   if PACKER_BOOTSTRAP then
