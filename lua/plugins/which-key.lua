@@ -9,7 +9,7 @@ wk.register(
     H = { ':bprevious<CR>', 'Previous Buffer' },
     L = { ':bnext<CR>', 'Next Buffer' },
     tt = { ':enew<CR>', 'New Buffer' },
-    tw = { ':Bdelete this<CR>:bprevious<CR>', 'Delete Buffer' },
+    tw = { ':Bdelete this<CR>', 'Delete Buffer' },
     to = { ':Bdelete other<CR>', 'Delete All Buffers Except Current' },
     f = { ':HopChar1<CR>', 'Hop Char1' },
     F = { ':HopChar1CurrentLine<CR>', 'Hop Char1 in current line' },
@@ -66,6 +66,12 @@ wk.register(
       name = 'Focus mode',
       z = { ':ZenMode<cr>', 'Zen mode' },
       t = { ':Twilight<cr>', 'Twilight' }
+    },
+    b = {
+      name = 'Bufferline',
+      b = { ':BufferLinePick<cr>', 'Go to buffer' },
+      w = { ':BufferLinePickClose<cr>', 'Close buffer' },
+      p = { ':BufferLineTogglePin<cr>', 'Toggle buffer pin' },
     }
   },
   {
