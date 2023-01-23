@@ -107,6 +107,3 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- vim-maximizer
 keymap("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
 
--- nvim-tree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
