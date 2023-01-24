@@ -98,5 +98,28 @@
     "typescriptreact"
   ],
   // coc-git
-  "git.addGBlameToVirtualText": true
+  "git.addGBlameToVirtualText": true,
+  // coc-spell-checker
+  "cSpell.enabledLanguageIds": [
+    "csharp",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "php",
+    "plaintext",
+    "typescript",
+    "typescriptreact",
+    "yml",
+    "python",
+    "lua",
+    "json",
+    "vue",
+    "css",
+    "html",
+    "less",
+    "scss",
+    "txt"
+  ],
+  "cSpell.allowCompoundWords": true
 }

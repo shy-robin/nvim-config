@@ -1,6 +1,20 @@
 local wk = require("which-key")
 
+-- Remap space as leader key
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- NORMAL mode
 wk.register({
+	d = { '"_d', "Delete with no register" },
+	dd = { '"_dd', "Delete a line with no register" },
+	D = { '"_D', "Delete backward with no register" },
+	c = { '"_c', "Change with no register" },
+	cc = { '"_cc', "Change a line with no register" },
+	C = { '"_C', "Change backward with no register" },
+	J = { "5j", "Move 5 lines down" },
+	K = { "5k", "Move 5 lines up" },
 	H = { ":bprevious<CR>", "Previous Buffer" },
 	L = { ":bnext<CR>", "Next Buffer" },
 	tt = { ":enew<CR>", "New Buffer" },
@@ -8,6 +22,16 @@ wk.register({
 	to = { ":Bdelete other<CR>", "Delete All Buffers Except Current" },
 	f = { ":HopChar1<CR>", "Hop Char1" },
 	F = { ":HopChar1CurrentLine<CR>", "Hop Char1 in current line" },
+	g = {
+		d = { "<Plug>(coc-definition)", "Go to definition" },
+		D = { "<Plug>(coc-type-definition)", "Go to type definition" },
+		i = { "<Plug>(coc-implementation)", "Go to type implementation" },
+		r = { "<Plug>(coc-references)", "Go to type references" },
+	},
+	["<C-h>"] = { "<C-w>h", "Move to left window" },
+	["<C-j>"] = { "<C-w>j", "Move to below window" },
+	["<C-k>"] = { "<C-w>k", "Move to above window" },
+	["<C-l>"] = { "<C-w>l", "Move to right window" },
 	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
@@ -16,17 +40,51 @@ wk.register({
 	["<ESC>"] = { "<ESC>", "Not show floaterm" },
 })
 
+-- VISUAL mode
 wk.register({
+	d = { '"_d', "delete with no register" },
+	dd = { '"_dd', "delete a line with no register" },
+	d = { '"_d', "delete backward with no register" },
+	c = { '"_c', "change with no register" },
+	cc = { '"_cc', "change a line with no register" },
+	c = { '"_c', "change backward with no register" },
+	["<"] = { "<gv", "keep insert mode after indent" },
+	[">"] = { ">gv", "keep insert mode after indent" },
+	p = { '"_dp', "paste with no register" },
+}, {
+	mode = "v",
+})
+
+--VISUAL_BLOCK mode
+wk.register({
+	J = { ":move '>+1<CR>gv-gv", "Move text down" },
+	K = { ":move '<-2<CR>gv-gv", "Move text up" },
+}, {
+	mode = "x",
+})
+
+-- INSERT mode
+wk.register({
+	jj = { "<ESC>", "Exit insert mode" },
 	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
 	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
 	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+	["<ESC>"] = { "<ESC>", "Not show floaterm" },
 }, {
 	mode = "i",
 })
 
+-- TERMINAL mode
 wk.register({
+	-- Terminal navigation
+	-- But using floaterm, not config these
+	-- ["<C-h>"] = { "<C-\\><C-N><C-w>h", "Terminal navigation" },
+	-- ["<C-j>"] = { "<C-\\><C-N><C-w>j", "Terminal navigation" },
+	-- ["<C-k>"] = { "<C-\\><C-N><C-w>k", "Terminal navigation" },
+	-- ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Terminal navigation" },
+
 	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
@@ -37,6 +95,7 @@ wk.register({
 	mode = "t",
 })
 
+-- OPERATOR_PENDING mode
 wk.register({
 	-- use y/c/d operators in Hop
 	f = { ":HopChar1<CR>", "Hop Char1" },
@@ -45,7 +104,11 @@ wk.register({
 	mode = "o", -- means Operator Pending Mode
 })
 
+-- NORMAL mode with <leader>
 wk.register({
+	n = {
+		h = { ":nohl<CR>", "No highlight" },
+	},
 	e = { ":CocCommand explorer --toggle --quit-on-open --position floating<CR>", "File explorer" },
 	q = { ":q<CR>", "Quit" },
 	Q = { ":q!<CR>", "Quit Force" },
@@ -97,7 +160,20 @@ wk.register({
 		w = { ":BufferLinePickClose<cr>", "Close buffer" },
 		p = { ":BufferLineTogglePin<cr>", "Toggle buffer pin" },
 	},
+	s = {
+		name = "Split window",
+		s = { "<C-w>v", "Split window vertically" },
+		S = { "<C-w>s", "Split window horizontally" },
+		e = { "<C-w>=", "Make split windows equal width" },
+		x = { ":close<CR>", "Close current split window" },
+		k = { "5<C-w>+", "Resize split window" },
+		j = { "5<C-w>-", "Resize split window" },
+		l = { "5<C-w><", "Resize split window" },
+		h = { "5<C-w>>", "Resize split window" },
+	},
 	m = { "'", "Move to mark" },
+	["+"] = { "<C-a>", "Number increase" },
+	["-"] = { "<C-x>", "Number decrease" },
 }, {
 	prefix = "<leader>",
 })
