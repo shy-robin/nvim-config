@@ -161,6 +161,11 @@ return packer.startup(function(use)
 
 	use("voldikss/vim-floaterm")
 
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
