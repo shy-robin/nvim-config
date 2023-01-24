@@ -1,8 +1,4 @@
-local status_ok, wk = pcall(require, "which-key")
-
-if not status_ok then
-	return
-end
+local wk = require("which-key")
 
 wk.register({
 	H = { ":bprevious<CR>", "Previous Buffer" },
@@ -12,6 +8,33 @@ wk.register({
 	to = { ":Bdelete other<CR>", "Delete All Buffers Except Current" },
 	f = { ":HopChar1<CR>", "Hop Char1" },
 	F = { ":HopChar1CurrentLine<CR>", "Hop Char1 in current line" },
+	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+	["<ESC>"] = { "<ESC>", "Not show floaterm" },
+})
+
+wk.register({
+	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+}, {
+	mode = "i",
+})
+
+wk.register({
+	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+	["<ESC>"] = { "<ESC>", "Make ESC work" },
+}, {
+	mode = "t",
 })
 
 wk.register({
@@ -52,6 +75,7 @@ wk.register({
 		e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show Line Diagnostics" },
 		n = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Go To Next Diagnostic" },
 		N = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Go To Previous Diagnostic" },
+		g = { "<cmd>FloatermNew lazygit<CR>", "New lazygit floaterm" },
 	},
 	f = {
 		name = "Telescope",
