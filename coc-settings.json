@@ -96,5 +96,7 @@
     "json",
     "javascriptreact",
     "typescriptreact"
-  ]
+  ],
+  // coc-git
+  "git.addGBlameToVirtualText": true
 }
