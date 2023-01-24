@@ -9,7 +9,7 @@ require("plugins.telescope")
 require("plugins.colorizer")
 -- require 'plugins.gitsigns'
 require("plugins.dashboard")
-require("plugins.indent-blankline")
+-- require("plugins.indent-blankline")
 -- require 'plugins.formatter'
 require("plugins.comment")
 -- require("plugins.toggleterm")
