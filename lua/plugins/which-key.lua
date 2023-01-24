@@ -44,10 +44,10 @@ wk.register({
 wk.register({
 	d = { '"_d', "delete with no register" },
 	dd = { '"_dd', "delete a line with no register" },
-	d = { '"_d', "delete backward with no register" },
+	D = { '"_d', "delete backward with no register" },
 	c = { '"_c', "change with no register" },
 	cc = { '"_cc', "change a line with no register" },
-	c = { '"_c', "change backward with no register" },
+	C = { '"_c', "change backward with no register" },
 	["<"] = { "<gv", "keep insert mode after indent" },
 	[">"] = { ">gv", "keep insert mode after indent" },
 	p = { '"_dp', "paste with no register" },
@@ -91,6 +91,7 @@ wk.register({
 	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
 	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
 	["<ESC>"] = { "<ESC>", "Make ESC work" },
+	["<C-=>"] = { "<cmd>FloatermUpdate --height=0.9 --width=0.9 <CR>", "Maximize floaterm" },
 }, {
 	mode = "t",
 })
