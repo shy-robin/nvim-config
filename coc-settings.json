@@ -121,5 +121,35 @@
     "scss",
     "txt"
   ],
-  "cSpell.allowCompoundWords": true
+  "cSpell.allowCompoundWords": true,
+  "suggest.completionItemKindLabels": {
+    "text": "Text",
+    "method": "Method",
+    "function": "Function",
+    "constructor": "Constructor",
+    "field": "Field",
+    "variable": "Variable",
+    "class": "Class",
+    "interface": "Interface",
+    "module": "Module",
+    "property": "Property",
+    "unit": "Unit",
+    "value": "Value",
+    "enum": "Enum",
+    "keyword": "Keyword",
+    "snippet": "Snippet",
+    "color": "Color",
+    "file": "File",
+    "reference": "Reference",
+    "folder": "Folder",
+    "enumMember": "EnumMember",
+    "constant": "Constant",
+    "struct": "Struct",
+    "event": "Event",
+    "operator": "Operator",
+    "typeParameter": "TypeParameter",
+    "default": ""
+  },
+  "snippets.textmateSnippetsRoots": ["~/.vsnip"],
+  "snippets.priority": 999
 }
