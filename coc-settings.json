@@ -151,5 +151,7 @@
     "default": ""
   },
   "snippets.textmateSnippetsRoots": ["~/.vsnip"],
-  "snippets.priority": 999
+  "snippets.priority": 999,
+  "colors.enable": true,
+  "highlight.trace": "verbose"
 }

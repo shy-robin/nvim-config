@@ -1,37 +1,37 @@
 vim.g.coc_global_extensions = {
-	"coc-json",
-	"coc-vimlsp",
-	"coc-marketplace",
-	"coc-explorer",
-	"coc-spell-checker",
-	"coc-html",
-	"coc-pairs",
-	"coc-css",
-	"coc-emmet",
-	"coc-prettier",
-	"@yaegassy/coc-volar",
-	"@yaegassy/coc-volar-tools",
+  "coc-json",
+  "coc-vimlsp",
+  "coc-marketplace",
+  "coc-explorer",
+  "coc-spell-checker",
+  "coc-html",
+  "coc-pairs",
+  "coc-css",
+  "coc-emmet",
+  "coc-prettier",
+  "@yaegassy/coc-volar",
+  "@yaegassy/coc-volar-tools",
+  "coc-tsserver",
 
-	"coc-tsserver",
-	"coc-cssmodules",
-	"coc-diagnostic",
-	"coc-eslint",
-	"coc-fzf-preview",
-	"coc-git",
-	"coc-highlight",
-	"coc-htmlhint",
-	"coc-html-css-support",
-	"coc-just-complete",
-	"coc-lists",
-	"coc-lightbulb",
-	"coc-markdownlint",
-	"coc-markdown-preview-enhanced",
-	"coc-markmap",
-	"coc-nav",
-	"coc-stylelintplus",
-	"coc-snippets",
-	"coc-stylua",
-	"coc-sumneko-lua",
+  "coc-cssmodules",
+  "coc-diagnostic",
+  "coc-eslint",
+  "coc-fzf-preview",
+  "coc-git",
+  "coc-highlight",
+  "coc-htmlhint",
+  "coc-html-css-support",
+  "coc-just-complete",
+  "coc-lists",
+  "coc-lightbulb",
+  "coc-markdownlint",
+  "coc-markdown-preview-enhanced",
+  "coc-markmap",
+  "coc-nav",
+  "coc-stylelintplus",
+  "coc-snippets",
+  "coc-stylua",
+  "coc-sumneko-lua",
 }
 
 vim.g.coc_config_home = "~/.config/nvim/"
@@ -51,8 +51,8 @@ vim.opt.signcolumn = "yes"
 local keyset = vim.keymap.set
 -- Autocomplete
 function _G.check_back_space()
-	local col = vim.fn.col(".") - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
 -- Use Tab for trigger completion with characters ahead and navigate
@@ -70,70 +70,37 @@ keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
 
 -- coc-pairs
 keyset(
-	"i",
-	"<cr>",
-	[[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<tab><backspace>"]],
-	opts
+  "i",
+  "<cr>",
+  [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<tab><backspace>"]],
+  opts
 )
 
--- Use <c-j> to trigger snippets
-keyset("i", "<c-s>", "<Plug>(coc-snippets-expand-jump)")
 -- Use <c-space> to trigger completion
 keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
-
--- Use `[g` and `]g` to navigate diagnostics
--- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
-
--- GoTo code navigation
--- keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
--- keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
--- keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
--- keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
-
--- Use <leader>h to show documentation in preview window
-function _G.show_docs()
-	local cw = vim.fn.expand("<cword>")
-	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
-		vim.api.nvim_command("h " .. cw)
-	elseif vim.api.nvim_eval("coc#rpc#ready()") then
-		vim.fn.CocActionAsync("doHover")
-	else
-		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
-	end
-end
-keyset("n", "<leader>h", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
 -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
-	group = "CocGroup",
-	command = "silent call CocActionAsync('highlight')",
-	desc = "Highlight symbol under cursor on CursorHold",
+  group = "CocGroup",
+  command = "silent call CocActionAsync('highlight')",
+  desc = "Highlight symbol under cursor on CursorHold",
 })
-
--- Symbol renaming
-keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
-
--- Formatting selected code
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
 
 -- Setup formatexpr specified filetype(s)
 vim.api.nvim_create_autocmd("FileType", {
-	group = "CocGroup",
-	pattern = "typescript,json",
-	command = "setl formatexpr=CocAction('formatSelected')",
-	desc = "Setup formatexpr specified filetype(s).",
+  group = "CocGroup",
+  pattern = "typescript,json",
+  command = "setl formatexpr=CocAction('formatSelected')",
+  desc = "Setup formatexpr specified filetype(s).",
 })
 
 -- Update signature help on jump placeholder
 vim.api.nvim_create_autocmd("User", {
-	group = "CocGroup",
-	pattern = "CocJumpPlaceholder",
-	command = "call CocActionAsync('showSignatureHelp')",
-	desc = "Update signature help on jump placeholder",
+  group = "CocGroup",
+  pattern = "CocJumpPlaceholder",
+  command = "call CocActionAsync('showSignatureHelp')",
+  desc = "Update signature help on jump placeholder",
 })
 
 -- Apply codeAction to the selected region
@@ -202,7 +169,7 @@ vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}"
 -- Mappings for CoCList
 -- code actions and coc stuff
 ---@diagnostic disable-next-line: redefined-local
-local opts = { silent = true, nowait = true }
+-- local opts = { silent = true, nowait = true }
 -- Show all diagnostics
 -- keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
@@ -214,8 +181,8 @@ local opts = { silent = true, nowait = true }
 -- Search workspace symbols
 -- keyset("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
 -- Do default action for next item
-keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
+-- keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
-keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
+-- keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
-keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+-- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
