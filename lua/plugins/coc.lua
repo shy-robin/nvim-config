@@ -1,37 +1,32 @@
 vim.g.coc_global_extensions = {
-  "coc-json",
-  "coc-vimlsp",
-  "coc-marketplace",
-  "coc-explorer",
-  "coc-spell-checker",
-  "coc-html",
-  "coc-pairs",
-  "coc-css",
-  "coc-emmet",
-  "coc-prettier",
-  "@yaegassy/coc-volar",
-  "@yaegassy/coc-volar-tools",
-  "coc-tsserver",
-
-  "coc-cssmodules",
-  "coc-diagnostic",
-  "coc-eslint",
-  "coc-fzf-preview",
-  "coc-git",
-  "coc-highlight",
-  "coc-htmlhint",
-  "coc-html-css-support",
-  "coc-just-complete",
-  "coc-lists",
-  "coc-lightbulb",
-  "coc-markdownlint",
-  "coc-markdown-preview-enhanced",
-  "coc-markmap",
-  "coc-nav",
-  "coc-stylelintplus",
-  "coc-snippets",
-  "coc-stylua",
-  "coc-sumneko-lua",
+	"coc-json",
+	"coc-vimlsp",
+	"coc-marketplace",
+	"coc-explorer",
+	"coc-spell-checker",
+	"coc-html",
+	"coc-pairs",
+	"coc-css",
+	"coc-emmet",
+	"coc-prettier",
+	"@yaegassy/coc-volar",
+	"@yaegassy/coc-volar-tools",
+	"coc-tsserver",
+	"coc-cssmodules",
+	"coc-diagnostic",
+	"coc-eslint",
+	"coc-git",
+	"coc-htmlhint",
+	"coc-html-css-support",
+	"coc-lists",
+	"coc-lightbulb",
+	"coc-markdownlint",
+	"coc-webview",
+	"coc-markdown-preview-enhanced",
+	"coc-stylelintplus",
+	"coc-snippets",
+	"coc-stylua",
+	"coc-sumneko-lua",
 }
 
 vim.g.coc_config_home = "~/.config/nvim/"
@@ -51,8 +46,8 @@ vim.opt.signcolumn = "yes"
 local keyset = vim.keymap.set
 -- Autocomplete
 function _G.check_back_space()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
 -- Use Tab for trigger completion with characters ahead and navigate
@@ -70,10 +65,10 @@ keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
 
 -- coc-pairs
 keyset(
-  "i",
-  "<cr>",
-  [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<tab><backspace>"]],
-  opts
+	"i",
+	"<cr>",
+	[[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<tab><backspace>"]],
+	opts
 )
 
 -- Use <c-space> to trigger completion
@@ -82,25 +77,25 @@ keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
 -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
-  group = "CocGroup",
-  command = "silent call CocActionAsync('highlight')",
-  desc = "Highlight symbol under cursor on CursorHold",
+	group = "CocGroup",
+	command = "silent call CocActionAsync('highlight')",
+	desc = "Highlight symbol under cursor on CursorHold",
 })
 
 -- Setup formatexpr specified filetype(s)
 vim.api.nvim_create_autocmd("FileType", {
-  group = "CocGroup",
-  pattern = "typescript,json",
-  command = "setl formatexpr=CocAction('formatSelected')",
-  desc = "Setup formatexpr specified filetype(s).",
+	group = "CocGroup",
+	pattern = "typescript,json",
+	command = "setl formatexpr=CocAction('formatSelected')",
+	desc = "Setup formatexpr specified filetype(s).",
 })
 
 -- Update signature help on jump placeholder
 vim.api.nvim_create_autocmd("User", {
-  group = "CocGroup",
-  pattern = "CocJumpPlaceholder",
-  command = "call CocActionAsync('showSignatureHelp')",
-  desc = "Update signature help on jump placeholder",
+	group = "CocGroup",
+	pattern = "CocJumpPlaceholder",
+	command = "call CocActionAsync('showSignatureHelp')",
+	desc = "Update signature help on jump placeholder",
 })
 
 -- Apply codeAction to the selected region
