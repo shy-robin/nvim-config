@@ -183,6 +183,13 @@ wk.register({
 	m = { "'", "Move to mark" },
 	["+"] = { "<C-a>", "Number increase" },
 	["-"] = { "<C-x>", "Number decrease" },
+	t = {
+		j = { ":TmuxNavigateDown<CR>", "TmuxNavigateDown" },
+		k = { ":TmuxNavigateUp<CR>", "TmuxNavigateUp" },
+		h = { ":TmuxNavigateLeft<CR>", "TmuxNavigateLeft" },
+		l = { ":TmuxNavigateRight<CR>", "TmuxNavigateRight" },
+		p = { ":TmuxNavigatePrevious<CR>", "TmuxNavigatePrevious" },
+	},
 }, {
 	prefix = "<leader>",
 })
