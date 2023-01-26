@@ -168,6 +168,8 @@ return packer.startup(function(use)
 
 	use("IngoMeyer441/coc_current_word")
 
+	use("mg979/vim-visual-multi")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
