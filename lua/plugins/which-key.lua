@@ -146,6 +146,7 @@ wk.register({
 		o = { ":Telescope oldfiles<cr>", "Old files" },
 		h = { ":Telescope help_tags<cr>", "Help tags" },
 		c = { ":e ~/.config/nvim/init.lua<cr>", "Open nvim config" },
+		t = { ":TodoTelescope<cr>", "Show todo list" },
 	},
 	z = {
 		name = "Focus mode",

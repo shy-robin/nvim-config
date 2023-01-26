@@ -170,6 +170,8 @@ return packer.startup(function(use)
 
 	use("mg979/vim-visual-multi")
 
+	use("folke/todo-comments.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
