@@ -19,7 +19,7 @@ require("plugins.zen-mode")
 require("plugins.twilight")
 -- require 'plugins.null-ls'
 require("plugins.hop")
-require("plugins.noice")
+-- require("plugins.noice")
 require("plugins.barbecue")
 require("plugins.neoscroll")
 require("plugins.marks")
