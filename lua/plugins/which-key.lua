@@ -140,12 +140,16 @@ wk.register({
 	},
 	f = {
 		name = "Telescope",
-		f = { ":Telescope find_files<cr>", "Find files" },
-		s = { ":Telescope live_grep<cr>", "Search text" },
+		f = {
+			":Telescope find_files find_command=rg,--ignore,--hidden,--files,-u,--glob,!**/.git/*,--glob,!**/node_modules/*<cr>",
+			-- ":Telescope find_files<cr>",
+			"Find files",
+		},
+		s = { "<cmd>:lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Search text" },
 		b = { ":Telescope buffers<cr>", "Search buffers" },
 		o = { ":Telescope oldfiles<cr>", "Old files" },
 		h = { ":Telescope help_tags<cr>", "Help tags" },
-		c = { ":e ~/.config/nvim/init.lua<cr>", "Open nvim config" },
+		c = { ":Telescope colorscheme<cr>", "Color scheme" },
 		t = { ":TodoTelescope<cr>", "Show todo list" },
 	},
 	z = {

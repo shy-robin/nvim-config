@@ -172,6 +172,8 @@ return packer.startup(function(use)
 
 	use("folke/todo-comments.nvim")
 
+	use("nvim-telescope/telescope-live-grep-args.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then

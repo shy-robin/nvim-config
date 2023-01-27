@@ -1,10 +1,12 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local telescopeConfig = require("telescope.config")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 -- Clone the default Telescope configuration
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 
+-- these only works for Live Grep, not works for Find Files
 -- I want to search in hidden/dot files.
 table.insert(vimgrep_arguments, "--hidden")
 -- I don't want to search in the `.git` directory.
@@ -20,14 +22,14 @@ telescope.setup({
 			horizontal = { mirror = false },
 			vertical = { mirror = false },
 		},
-		find_command = {
-			"rg",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-		},
+		-- find_command = {
+		-- 	"rg",
+		-- 	"--no-heading",
+		-- 	"--with-filename",
+		-- 	"--line-number",
+		-- 	"--column",
+		-- 	"--smart-case",
+		-- },
 		prompt_prefix = "  ",
 		selection_caret = " 󱞩 ",
 		entry_prefix = "  ",
@@ -66,12 +68,6 @@ telescope.setup({
 		},
 		-- `hidden = true` is not supported in text grep commands.
 		vimgrep_arguments = vimgrep_arguments,
-		pickers = {
-			find_files = {
-				-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-				find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-			},
-		},
 		preview = {
 			mime_hook = function(filepath, bufnr, opts)
 				local is_image = function(filepath)
@@ -102,4 +98,48 @@ telescope.setup({
 			end,
 		},
 	},
+	pickers = {
+		-- find_files = {
+		-- 	-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+		-- 	find_command = { "rg", "--files", "--no_ignore", "--hidden", "-g", "!.git" },
+		-- },
+		-- live_grep = {
+		-- 	mappings = {
+		-- 		-- ["<c-l>"] = custom_pickers.actions.set_folders,
+		-- 		-- ["<c-f>"] = custom_pickers.actions.set_extension,
+		-- 		i = {
+		-- 			["<C-y>"] = "<cmd>LspInfofds<cr>",
+		-- 		},
+		-- 	},
+		-- },
+	},
+	-- extensions = {
+	-- 	live_grep_args = {
+	-- 		auto_quoting = true,
+	-- 		mappings = {
+	-- 			i = {
+	-- 				["<C-;>"] = lga_actions.quote_prompt(),
+	-- 				["<C-'>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
+	extensions = {
+		live_grep_args = {
+			auto_quoting = true, -- enable/disable auto-quoting
+			-- define mappings, e.g.
+			mappings = { -- extend mappings
+				i = {
+					["<C-k>"] = lga_actions.quote_prompt(),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+				},
+			},
+			-- ... also accepts theme settings, for example:
+			-- theme = "dropdown", -- use dropdown theme
+			-- theme = { }, -- use own theme spec
+			-- layout_config = { mirror=true }, -- mirror preview pane
+		},
+	},
 })
+
+telescope.load_extension("live_grep_args")
