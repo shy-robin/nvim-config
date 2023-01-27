@@ -126,7 +126,7 @@ wk.register({
 	n = {
 		h = { ":nohl<CR>", "No highlight" },
 	},
-	e = { ":CocCommand explorer --toggle --quit-on-open --position floating<CR>", "File explorer" },
+	e = { ":CocCommand explorer --toggle --quit-on-open<CR>", "File explorer" },
 	q = { ":q<CR>", "Quit" },
 	Q = { ":q!<CR>", "Quit Force" },
 	w = {
