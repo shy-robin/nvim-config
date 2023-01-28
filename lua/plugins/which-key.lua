@@ -169,6 +169,17 @@ wk.register({
 		c = { ":CocList commands<CR>", "Show commands" },
 		o = { ":CocList outline<CR>", "Find symbol of current document" },
 		s = { ":CocList -I symbols<CR>", "Search workspace symbols" },
+		l = { "<Plug>(coc-codelens-action)", "Run the Code Lens actions on the current line" },
+	},
+	a = {
+		name = "Code action",
+		a = { "<Plug>(coc-codeaction-selected)", "Apply codeAction to the selected region" },
+		c = { "<Plug>(coc-codeaction-cursor)", "Apply codeAction at the cursor position" },
+		s = { "<Plug>(coc-codeaction-source)", "Apply codeAction affect whole buffer" },
+		b = { "<Plug>(coc-codeaction)", "Apply codeAction to the current buffer" },
+		f = { "<Plug>(coc-fix-current)", "Apply the most preferred quickfix action on the current line" },
+		R = { "<Plug>(coc-codeaction-refactor)", "Apply refactor code actions" },
+		r = { "<Plug>(coc-codeaction-refactor-selected)", "Apply refactor code actions" },
 	},
 	s = {
 		name = "Split window",
@@ -200,6 +211,7 @@ wk.register({
 
 wk.register({
 	f = { "<Plug>(coc-format-selected)", "Format selected code" },
+	a = { "<Plug>(coc-codeaction-selected)", "Apply codeAction to the selected region" },
 }, {
 	prefix = "<leader>",
 	mode = "x",

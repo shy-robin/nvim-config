@@ -153,5 +153,8 @@
   "snippets.textmateSnippetsRoots": ["~/.vsnip"],
   "snippets.priority": 999,
   "colors.enable": true,
-  "highlight.trace": "verbose"
+  "highlight.trace": "verbose",
+  "cSpell.userWords": [
+    "nvim"
+  ]
 }
