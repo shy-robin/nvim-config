@@ -10,7 +10,6 @@ vim.g.coc_global_extensions = {
 	"coc-emmet",
 	"coc-prettier",
 	"@yaegassy/coc-volar",
-	"@yaegassy/coc-volar-tools",
 	"coc-tsserver",
 	"coc-cssmodules",
 	"coc-diagnostic",
@@ -64,12 +63,7 @@ keyset("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
 
 -- coc-pairs
-keyset(
-	"i",
-	"<cr>",
-	[[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<tab><backspace>"]],
-	opts
-)
+keyset("i", "<cr>", [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
 -- Use <c-space> to trigger completion
 keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })

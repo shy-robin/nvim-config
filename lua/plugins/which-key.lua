@@ -194,6 +194,7 @@ wk.register({
 	},
 	r = {
 		n = { "<Plug>(coc-rename)", "Rename symbol" },
+		r = { ":syntax sync fromstart<CR>", "Reload syntax highlight" },
 	},
 	m = { "'", "Move to mark" },
 	["+"] = { "<C-a>", "Number increase" },

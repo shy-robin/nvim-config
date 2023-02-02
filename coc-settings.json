@@ -155,6 +155,9 @@
   "colors.enable": true,
   "highlight.trace": "verbose",
   "cSpell.userWords": [
-    "nvim"
+    "keyof",
+    "nbsp",
+    "nvim",
+    "shenzhou"
   ]
 }
