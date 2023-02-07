@@ -55,6 +55,10 @@ return packer.startup(function(use)
 	})
 
 	use("folke/tokyonight.nvim")
+	use("NLKNguyen/papercolor-theme")
+	use("morhetz/gruvbox")
+	use("joshdick/onedark.vim")
+	use("sainnhe/everforest")
 
 	use({
 		"nvim-lualine/lualine.nvim",

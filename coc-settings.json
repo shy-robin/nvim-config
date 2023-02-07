@@ -156,8 +156,10 @@
   "highlight.trace": "verbose",
   "cSpell.userWords": [
     "keyof",
+    "kwai",
     "nbsp",
     "nvim",
+    "rgba",
     "shenzhou"
   ]
 }
