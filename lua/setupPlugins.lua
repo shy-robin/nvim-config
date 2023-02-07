@@ -54,11 +54,16 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- colorschemes
 	use("folke/tokyonight.nvim")
 	use("NLKNguyen/papercolor-theme")
 	use("morhetz/gruvbox")
 	use("joshdick/onedark.vim")
 	use("sainnhe/everforest")
+	use("w0ng/vim-hybrid")
+	use("cormacrelf/vim-colors-github")
+	use("gavinok/spaceway.vim")
+	use("larsbs/vimterial")
 
 	use({
 		"nvim-lualine/lualine.nvim",
