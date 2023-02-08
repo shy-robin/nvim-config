@@ -49,6 +49,9 @@ local db = require("dashboard")
 db.setup({
 	theme = "hyper",
 	config = {
+		week_header = {
+			enable = true,
+		},
 		header = {
 			[[]],
 			[[]],
@@ -65,7 +68,7 @@ db.setup({
 			[[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
 		},
 		shortcut = {
-			{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+			{ desc = " Plugins", group = "@property", action = "PackerStatus", key = "p" },
 			{
 				desc = " Files",
 				group = "Label",
@@ -73,16 +76,16 @@ db.setup({
 				key = "f",
 			},
 			{
-				desc = " Apps",
+				desc = " Text",
 				group = "DiagnosticHint",
-				action = "Telescope app",
-				key = "a",
+				action = "Telescope live_grep",
+				key = "t",
 			},
 			{
-				desc = " dotfiles",
+				desc = " Scheme",
 				group = "Number",
-				action = "Telescope dotfiles",
-				key = "d",
+				action = "Telescope colorscheme",
+				key = "s",
 			},
 		},
 	},

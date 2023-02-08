@@ -32,6 +32,7 @@ wk.register({
 	tt = { ":enew<CR>", "New Buffer" },
 	tw = { ":Bdelete this<CR>", "Delete Buffer" },
 	to = { ":Bdelete other<CR>", "Delete All Buffers Except Current" },
+	td = { ":Dashboard<CR>", "Open dashboard page" },
 	f = { ":HopChar1<CR>", "Hop Char1" },
 	F = { ":HopChar1CurrentLine<CR>", "Hop Char1 in current line" },
 	g = {
