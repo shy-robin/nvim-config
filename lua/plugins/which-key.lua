@@ -1,5 +1,7 @@
 local wk = require("which-key")
 
+vim.g.tmux_navigator_no_mappings = 1
+
 -- Remap space as leader key
 vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
@@ -14,6 +16,19 @@ function _G.show_docs()
 		vim.fn.CocActionAsync("doHover")
 	else
 		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+	end
+end
+
+function toggle_floaterm_size()
+	local w = vim.g.floaterm_width
+	if w == 0.9 then
+		vim.api.nvim_command("FloatermUpdate --height=0.6 --width=0.6")
+		vim.g.floaterm_width = 0.6
+		vim.g.floaterm_height = 0.6
+	else
+		vim.api.nvim_command("FloatermUpdate --height=0.9 --width=0.9")
+		vim.g.floaterm_width = 0.9
+		vim.g.floaterm_height = 0.9
 	end
 end
 
@@ -45,16 +60,20 @@ wk.register({
 		l = { "<cmd>CocDiagnostics<CR>", "Diagnostic list" },
 		h = { "<cmd>lua _G.show_docs()<CR>", "Show docs" },
 	},
-	["<C-h>"] = { "<C-w>h", "Move to left window" },
-	["<C-j>"] = { "<C-w>j", "Move to below window" },
-	["<C-k>"] = { "<C-w>k", "Move to above window" },
-	["<C-l>"] = { "<C-w>l", "Move to right window" },
-	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	-- ["<C-h>"] = { "<C-w>h", "Move to left window" },
+	-- ["<C-j>"] = { "<C-w>j", "Move to below window" },
+	-- ["<C-k>"] = { "<C-w>k", "Move to above window" },
+	-- ["<C-l>"] = { "<C-w>l", "Move to right window" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
-	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
-	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
-	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+	-- ["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	-- ["<C-z>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	-- ["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	-- ["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
 	["<ESC>"] = { "<ESC>", "Not show floaterm" },
+	["<C-h>"] = { "<cmd>TmuxNavigateLeft<CR>", "Tmux navigate left" },
+	["<C-l>"] = { "<cmd>TmuxNavigateRight<CR>", "Tmux navigate right" },
+	["<C-j>"] = { "<cmd>TmuxNavigateDown<CR>", "Tmux navigate down" },
+	["<C-k>"] = { "<cmd>TmuxNavigateUp<CR>", "Tmux navigate up" },
 })
 
 -- VISUAL mode
@@ -83,11 +102,11 @@ wk.register({
 -- INSERT mode
 wk.register({
 	jj = { "<ESC>", "Exit insert mode" },
-	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
-	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
-	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
-	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
+	-- ["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	-- ["<C-z>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	-- ["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	-- ["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
 	["<ESC>"] = { "<ESC>", "Not show floaterm" },
 }, {
 	mode = "i",
@@ -95,20 +114,16 @@ wk.register({
 
 -- TERMINAL mode
 wk.register({
-	-- Terminal navigation
-	-- But using floaterm, not config these
-	-- ["<C-h>"] = { "<C-\\><C-N><C-w>h", "Terminal navigation" },
-	-- ["<C-j>"] = { "<C-\\><C-N><C-w>j", "Terminal navigation" },
-	-- ["<C-k>"] = { "<C-\\><C-N><C-w>k", "Terminal navigation" },
-	-- ["<C-l>"] = { "<C-\\><C-N><C-w>l", "Terminal navigation" },
-
-	["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
-	["<C-[>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
-	["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
+	["<C-k>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
+	["<C-h>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
+	["<C-l>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
 	["<C-q>"] = { "<cmd>FloatermKill<CR>", "Kill floaterm" },
 	["<ESC>"] = { "<ESC>", "Make ESC work" },
-	["<C-=>"] = { "<cmd>FloatermUpdate --height=0.9 --width=0.9 <CR>", "Maximize floaterm" },
+	["<C-j>"] = {
+		"<cmd>lua toggle_floaterm_size()<CR>",
+		"Maximize floaterm",
+	},
 }, {
 	mode = "t",
 })
