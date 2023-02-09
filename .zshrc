@@ -107,5 +107,6 @@ alias tn="tmux new -s"
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias td="tmux detach"
+alias tr="tmux kill-server && tmux"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
