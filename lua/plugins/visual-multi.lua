@@ -1,6 +1,6 @@
 vim.g.VM_maps = {
-	["Find Under"] = "gb",
-	["Find Subword Under"] = "gb",
+	-- ["Find Under"] = "gb",
+	-- ["Find Subword Under"] = "gb",
 	["Select All"] = "<space>av",
 	-- ["Start Regex Search"] = "<space>/",
 	["Add Cursor Down"] = "<space>j",
