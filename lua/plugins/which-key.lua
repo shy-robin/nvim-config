@@ -64,7 +64,7 @@ wk.register({
 	-- ["<C-j>"] = { "<C-w>j", "Move to below window" },
 	-- ["<C-k>"] = { "<C-w>k", "Move to above window" },
 	-- ["<C-l>"] = { "<C-w>l", "Move to right window" },
-	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-o>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	-- ["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	-- ["<C-z>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
 	-- ["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
@@ -102,7 +102,7 @@ wk.register({
 -- INSERT mode
 wk.register({
 	jj = { "<ESC>", "Exit insert mode" },
-	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-o>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	-- ["<C-p>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	-- ["<C-z>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
 	-- ["<C-]>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
@@ -114,7 +114,7 @@ wk.register({
 
 -- TERMINAL mode
 wk.register({
-	["<C-\\>"] = { "<cmd>FloatermToggle<CR>", "Toggle floaterm" },
+	["<C-o>"] = { "<C-\\><C-n><cmd>FloatermToggle<CR>", "Toggle floaterm" },
 	["<C-k>"] = { "<cmd>FloatermNew<CR>", "New floaterm" },
 	["<C-h>"] = { "<cmd>FloatermPrev<CR>", "Prev floaterm" },
 	["<C-l>"] = { "<cmd>FloatermNext<CR>", "Next floaterm" },
@@ -124,6 +124,8 @@ wk.register({
 		"<cmd>lua toggle_floaterm_size()<CR>",
 		"Maximize floaterm",
 	},
+	["<C-n>"] = { "<C-\\><C-n>", "Enter normal mode" },
+	["<Tab>"] = { "<Tab>", "Make Tab work" },
 }, {
 	mode = "t",
 })
