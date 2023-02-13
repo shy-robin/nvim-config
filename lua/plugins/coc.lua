@@ -50,14 +50,18 @@ function _G.check_back_space()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
+-- Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
+-- see: https://github.com/neoclide/coc-snippets#examples
+vim.g.coc_snippet_next = "<tab>"
+
 -- Use Tab for trigger completion with characters ahead and navigate
 -- NOTE: There's always a completion item selected by default, you may want to enable
 -- no select by setting `"suggest.noselect": true` in your configuration file
 -- NOTE: Use command ':verbose imap <tab>' to make sure Tab is not mapped by
 -- other plugins before putting this into your config
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-keyset("i", "<c-j>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-keyset("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+keyset("i", "<c-j>", 'coc#pum#visible() ? coc#pum#next(1) : "<c-j>"', opts)
+keyset("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "<c-k>"]], opts)
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice
