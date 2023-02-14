@@ -53,6 +53,7 @@ end
 -- Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
 -- see: https://github.com/neoclide/coc-snippets#examples
 vim.g.coc_snippet_next = "<tab>"
+vim.g.coc_snippet_prev = "<s-tab>"
 
 -- Use Tab for trigger completion with characters ahead and navigate
 -- NOTE: There's always a completion item selected by default, you may want to enable
@@ -60,12 +61,18 @@ vim.g.coc_snippet_next = "<tab>"
 -- NOTE: Use command ':verbose imap <tab>' to make sure Tab is not mapped by
 -- other plugins before putting this into your config
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-keyset("i", "<c-j>", 'coc#pum#visible() ? coc#pum#next(1) : "<c-j>"', opts)
-keyset("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "<c-k>"]], opts)
+keyset("i", "<c-j>", [[coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"]], opts)
+keyset("i", "<c-k>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"]], opts)
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice
-keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
+-- keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
+keyset(
+	"i",
+	"<TAB>",
+	[[coc#pum#visible() ? coc#pum#confirm() : coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]],
+	opts
+)
 
 -- coc-pairs
 keyset("i", "<cr>", [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
