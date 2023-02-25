@@ -154,7 +154,7 @@ wk.register({
 	Q = { ":q!<CR>", "Quit Force" },
 	w = {
 		name = "Save file",
-		w = { ":w<CR>", "Save and format" },
+		w = { ":w!<CR>", "Save and format" },
 		q = { ":wq<CR>", "Save format and quit" },
 		n = { ":noa w<CR>", "Save but not format" },
 	},
