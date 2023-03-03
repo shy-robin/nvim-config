@@ -161,6 +161,7 @@
     "nvim",
     "pnpm",
     "rgba",
-    "shenzhou"
+    "shenzhou",
+    "xlink"
   ]
 }

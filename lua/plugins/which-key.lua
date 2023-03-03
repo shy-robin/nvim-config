@@ -156,7 +156,7 @@ wk.register({
 		name = "Save file",
 		w = { ":w!<CR>", "Save and format" },
 		q = { ":wq<CR>", "Save format and quit" },
-		n = { ":noa w<CR>", "Save but not format" },
+		n = { ":noa w!<CR>", "Save but not format" },
 	},
 	l = {
 		g = { "<cmd>FloatermNew lazygit<CR>", "New lazygit floaterm" },
