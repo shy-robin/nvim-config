@@ -174,6 +174,7 @@ wk.register({
 		h = { ":Telescope help_tags<cr>", "Help tags" },
 		c = { ":Telescope colorscheme<cr>", "Color scheme" },
 		t = { ":TodoTelescope<cr>", "Show todo list" },
+		r = { ":Telescope resume<cr>", "Rerun old finders" },
 	},
 	z = {
 		name = "Focus mode",
