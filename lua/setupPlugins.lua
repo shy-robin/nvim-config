@@ -183,6 +183,8 @@ return packer.startup(function(use)
 
 	use("nvim-telescope/telescope-live-grep-args.nvim")
 
+	use("diepm/vim-rest-console")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
