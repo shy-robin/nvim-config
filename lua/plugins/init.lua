@@ -1,4 +1,4 @@
-require("plugins.treesitter")
+-- require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.bufferline")
 -- require 'plugins.nvim-tree'
@@ -20,7 +20,7 @@ require("plugins.twilight")
 -- require 'plugins.null-ls'
 require("plugins.hop")
 require("plugins.noice")
-require("plugins.barbecue")
+-- require("plugins.barbecue")
 require("plugins.neoscroll")
 require("plugins.marks")
 require("plugins.coc")
