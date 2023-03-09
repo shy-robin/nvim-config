@@ -218,8 +218,8 @@ wk.register({
 	},
 	r = {
 		n = { "<Plug>(coc-rename)", "Rename symbol" },
-		-- h = { ":syntax sync fromstart<CR>", "Reload syntax highlight" },
-		h = { ":syn off | syn on<CR>", "Reload syntax highlight" },
+		h = { ":syntax sync fromstart<CR>", "Reload syntax highlight" },
+		-- h = { ":syn off | syn on<CR>", "Reload syntax highlight" },
 		c = { ":call VrcQuery()<CR>", "Rest console" },
 	},
 	m = { "'", "Move to mark" },
