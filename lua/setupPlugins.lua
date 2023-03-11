@@ -88,7 +88,7 @@ return packer.startup(function(use)
 
 	use("windwp/nvim-ts-autotag")
 
-	use("p00f/nvim-ts-rainbow")
+	-- use("p00f/nvim-ts-rainbow")
 
 	use("windwp/nvim-autopairs")
 
@@ -191,6 +191,7 @@ return packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
