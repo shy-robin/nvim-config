@@ -185,6 +185,12 @@ return packer.startup(function(use)
 
 	use("diepm/vim-rest-console")
 
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
