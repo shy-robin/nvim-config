@@ -32,6 +32,17 @@ function toggle_floaterm_size()
 	end
 end
 
+local is_background_transparent = 0
+function toggle_transparent_background()
+	if is_background_transparent == 0 then
+		vim.api.nvim_command("highlight Normal ctermbg=NONE guibg=NONE")
+		is_background_transparent = 1
+	else
+		vim.api.nvim_command("set background=dark")
+		is_background_transparent = 0
+	end
+end
+
 -- NORMAL mode
 wk.register({
 	d = { '"_d', "Delete with no register" },
@@ -226,11 +237,12 @@ wk.register({
 	["+"] = { "<C-a>", "Number increase" },
 	["-"] = { "<C-x>", "Number decrease" },
 	t = {
-		j = { ":TmuxNavigateDown<CR>", "TmuxNavigateDown" },
-		k = { ":TmuxNavigateUp<CR>", "TmuxNavigateUp" },
-		h = { ":TmuxNavigateLeft<CR>", "TmuxNavigateLeft" },
-		l = { ":TmuxNavigateRight<CR>", "TmuxNavigateRight" },
-		p = { ":TmuxNavigatePrevious<CR>", "TmuxNavigatePrevious" },
+		-- j = { ":TmuxNavigateDown<CR>", "TmuxNavigateDown" },
+		-- k = { ":TmuxNavigateUp<CR>", "TmuxNavigateUp" },
+		-- h = { ":TmuxNavigateLeft<CR>", "TmuxNavigateLeft" },
+		-- l = { ":TmuxNavigateRight<CR>", "TmuxNavigateRight" },
+		-- p = { ":TmuxNavigatePrevious<CR>", "TmuxNavigatePrevious" },
+		t = { "<cmd>lua toggle_transparent_background()<CR>", "Toggle transparent background" },
 	},
 }, {
 	prefix = "<leader>",
