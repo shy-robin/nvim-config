@@ -7,3 +7,6 @@ vim.g.vrc_curl_opts = {
 	["--max-time"] = 60,
 	["-k"] = "",
 }
+vim.g.vrc_auto_format_response_patterns = {
+	json = "python3 -m json.tool",
+}
