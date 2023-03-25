@@ -60,6 +60,7 @@ wk.register({
 	L = { ":bnext<CR>", "Next Buffer" },
 	tt = { ":enew<CR>", "New Buffer" },
 	tw = { ":Bdelete this<CR>", "Delete Buffer" },
+	tW = { ":bd!<CR>", "Delete buffer force" },
 	to = { ":Bdelete other<CR>", "Delete All Buffers Except Current" },
 	td = { ":Dashboard<CR>", "Open dashboard page" },
 	f = { ":HopChar1<CR>", "Hop Char1" },

@@ -155,6 +155,7 @@
   "colors.enable": true,
   "highlight.trace": "verbose",
   "cSpell.userWords": [
+    "antd",
     "keyof",
     "kwai",
     "nbsp",
@@ -162,6 +163,7 @@
     "pnpm",
     "rgba",
     "shenzhou",
+    "vuex",
     "xlink"
   ]
 }
