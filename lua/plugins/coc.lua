@@ -27,6 +27,7 @@ vim.g.coc_global_extensions = {
 	"coc-stylua",
 	"coc-sumneko-lua",
 	"coc-styled-components",
+	"coc-svelte",
 }
 
 vim.g.coc_config_home = "~/.config/nvim/"

@@ -95,7 +95,8 @@
     "typescript",
     "json",
     "javascriptreact",
-    "typescriptreact"
+    "typescriptreact",
+    "svelte"
   ],
   // coc-git
   "git.addGBlameToVirtualText": true,
@@ -165,5 +166,6 @@
     "shenzhou",
     "vuex",
     "xlink"
-  ]
+  ],
+  "svelte.enable-ts-plugin": true
 }

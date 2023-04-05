@@ -192,6 +192,8 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use("leafOfTree/vim-svelte-plugin")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end a all plugins
 	if PACKER_BOOTSTRAP then
