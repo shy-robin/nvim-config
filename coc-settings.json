@@ -156,6 +156,7 @@
   "colors.enable": true,
   "highlight.trace": "verbose",
   "cSpell.userWords": [
+    "Unsubscriber",
     "antd",
     "keyof",
     "kwai",
@@ -167,5 +168,20 @@
     "vuex",
     "xlink"
   ],
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "tsserver.log": "normal",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "less",
+    "json",
+    "scss",
+    "svelte"
+  ],
+  "eslint.validate": ["javascript", "javascriptreact", "svelte"]
 }
