@@ -217,6 +217,7 @@ wk.register({
 		t = { ":Twilight<cr>", "Twilight" },
 	},
 	c = {
+		name = "Coc",
 		d = { ":CocList diagnostics<CR>", "Show all diagnostics" },
 		e = { ":CocList extensions<CR>", "Manage extensions" },
 		c = { ":CocList commands<CR>", "Show commands" },

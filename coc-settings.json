@@ -184,5 +184,10 @@
     "scss",
     "svelte"
   ],
-  "eslint.validate": ["javascript", "javascriptreact", "svelte"]
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "svelte"
+  ],
+  "git.enableGutters": true
 }
