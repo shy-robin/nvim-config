@@ -210,6 +210,7 @@ wk.register({
 		s = { ":w!<CR>", "Save and format" },
 		q = { ":wq<CR>", "Save format and quit" },
 		n = { ":noa w!<CR>", "Save but not format" },
+		m = { ":CocCommand eslint.executeAutofix<CR>", "Autofix with Eslint" },
 	},
 	z = {
 		name = "Focus mode",
