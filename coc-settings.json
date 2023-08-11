@@ -96,7 +96,8 @@
     "json",
     "javascriptreact",
     "typescriptreact",
-    "svelte"
+    "svelte",
+    "scss"
   ],
   // coc-git
   "git.addGBlameToVirtualText": true,
@@ -184,10 +185,6 @@
     "scss",
     "svelte"
   ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "svelte"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "svelte"],
   "git.enableGutters": true
 }
